@@ -23,7 +23,17 @@ class UserController extends Controller
        // UserModel::where('username', 'customer-1')->update($data); //tambahkan data ke tabel m_user
 
         //coba akses model UserModel
-        $user = UserModel::where('username','manager9')->firstOrFail(); //ambil semua data dari tabel m_user
+        $user = UserModel::firstOrNew(
+            [
+                'username'=>'manager33',
+                'nama'=>'Manager Tiga Tiga',
+                'password'=>Hash::make('12345'),
+                'level_id'=>2
+            ],
+        ); 
+        $user->save();
+        //$user = UserModel::where('level_id',2)->count(); 
+        //dd($user);
         return view('user', ['data' => $user]);
     }
 }
