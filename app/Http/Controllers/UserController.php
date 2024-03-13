@@ -53,11 +53,9 @@ class UserController extends Controller
         //$user->isDirty();//false
         //$user->isClean();//true
         //dd($user->isDirty());
-
-        
-        $user = UserModel::all(); 
-        //dd($user);
-        return view('user', ['data' => $user]);
+        $user = UserModel::with('level')->get();
+        return view('user',['data'=>$user]);
+        //dd($user); 
     }
     public function tambah(){
         return view('user_tambah');
