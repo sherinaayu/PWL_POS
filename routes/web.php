@@ -70,4 +70,4 @@ Route::put('/level/{id}', [LevelController::class, 'edit_simpan'])->name('/level
 Route::get('/level/delete/{id}', [LevelController::class, 'delete'])->name('/level/delete');
 
 //POS
-//Route::resource('m_user', POSController::class);
+Route::resource('m_user', POSController::class);
