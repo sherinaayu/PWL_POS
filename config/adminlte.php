@@ -316,17 +316,31 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'Manage Kategori',
-            'url' => '/kategori',
-            'icon' => 'far fa-fw fa-folder',
-            'label_color' => 'success',
-        ],
-        [
             'text' => 'pages',
             'url' => 'admin/pages',
             'icon' => 'far fa-fw fa-file',
             'label' => 4,
             'label_color' => 'success',
+        ],
+        [
+            'text' => 'Kategori',
+            'url' => 'kategori',
+            'icon' => 'far fa-fw fa-list-alt',
+        ],
+        [
+            'text' => 'User',
+            'url' => 'user',
+            'icon' => 'fas fa-user-plus',
+        ],
+        [
+            'text' => 'Level',
+            'url' => '/level',
+            'icon' => 'fas fa-users',
+        ],
+        [
+            'text' => 'M User',
+            'url' => 'm_user',
+            'icon' => 'fas fa-tasks',
         ],
         ['header' => 'account_settings'],
         [
