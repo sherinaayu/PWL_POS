@@ -11,7 +11,7 @@ class StorePostRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,14 @@ class StorePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'kategori_kode' => 'required',
+            'kategori_nama' => 'required',
+            'username' => 'required',
+            'nama' => 'required',
+            'password' => 'required',
+            'level_id' => 'required',
+            'level_kode' => 'required',
+            'level_nama' => 'required',
         ];
     }
 }

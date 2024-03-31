@@ -21,13 +21,25 @@ class LevelController extends Controller
         return view('level.create');
     }
 
-    public function store(Request $request){
+    public function store(StorePostrequest $request)
+    {
+        // The incoming request is valid...
+
+        // Retrieve the validated input data...
+        $validated = $request->validate();
+
+        // Retreive a portion of the validated input data...
+        $validated = $request->safe()->only(['level_kode', 'level_nama']);
+        $validated = $request->safe()->except(['level_kode', 'level_nama']);
+        
         LevelModel::create([
             'level_kode' => $request->level_kode,
             'level_nama' => $request->level_nama,
         ]);
+
         return redirect('/level');
     }
+
     public function edit($id)
     {
         $level = LevelModel::find($id);
