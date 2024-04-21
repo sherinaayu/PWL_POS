@@ -68,6 +68,16 @@ Route::group(['prefix' => 'barang'], function () {
     Route::delete('/{id}', [BarangController::class, 'destroy']); // Menghapus data barang
 });
 
+Route::group(['prefix' => 'stok'], function () {
+    Route::get('/', [StokController::class, 'index']);          // Menampilkan halaman awal stok
+    Route::post('/list', [StokController::class, 'list']);      // Menampilkan data stok dalam bentuk json untuk datatables
+    Route::get('/create', [StokController::class, 'create']);   // Menampilkan halaman form tambah stok
+    Route::post('/', [StokController::class, 'store']);         // Menyimpan data stok baru
+    Route::get('/{id}', [StokController::class, 'show']);       // Menampilkan detail stok
+    Route::get('/{id}/edit', [StokController::class, 'edit']);  // Menampilkan halaman form edit stok
+    Route::put('/{id}', [StokController::class, 'update']);     // Menyimpan perubahan data stok
+    Route::delete('/{id}', [StokController::class, 'destroy']); // Menghapus data stok
+});
 // Route::get('/', function () {
 //     return view('welcome');
 // });
