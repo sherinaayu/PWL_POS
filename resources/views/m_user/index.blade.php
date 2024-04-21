@@ -28,10 +28,10 @@
         <table class="table table-bordered">
             <tr>
                 <th width="20px" class="text-center">User id</th>
-                <th width="150px" class="text-center">Level id</th>
+                <th width="160px" class="text-center">Level id</th>
                 <th width="200px"class="text-center">Username</th>
                 <th width="200px"class="text-center">Nama</th>
-                <th width="150px"class="text-center">Password</th>
+                <th width="160px"class="text-center">Password</th>
                 <th width="1000px"class="text-center">Actions</th>
             </tr>
             @foreach ($useri as $m_user)
