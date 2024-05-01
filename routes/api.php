@@ -3,6 +3,10 @@
 use App\Http\Controllers\Api\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\LevelController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\Api\KategoriController;
+use App\Http\Controllers\Api\BarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/register',App\Http\Controllers\Api\RegisterController::class)->name('register');
+// Register
+Route::post('/register', App\Http\Controllers\Api\RegisterController::class)->name('register');
+
+// Login
+Route::post('/login', App\Http\Controllers\Api\LoginController::class)->name('login');
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
